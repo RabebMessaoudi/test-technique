@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+
+{% block body%}
+
+    {% if all_equipes %}
+        <h3>Here are all my team :</h3>
+
+        <ul>
+            {% for equipe in all_equipes %}
+                <li><a href="{% url 'polls:detail' equipe.id%}">{{ equipe.nom }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>Empty</h3>
+    {% endif %}
+{% endblock %}
